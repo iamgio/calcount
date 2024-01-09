@@ -2,11 +2,11 @@
 
 import Foundation
 
-struct ConsumedFood: Hashable {
-    var food: Food
-    var quantity: Int // in grams
+struct ConsumedMeal: Hashable {
+    var meal: Meal
+    var amount: Double // in grams
     
-    var totalCalories: Int {
-        food.baseCalories * quantity / 100
+    var totalCalories: Double {
+        meal.calculateCalories(amount: amount)
     }
 }

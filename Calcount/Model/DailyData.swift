@@ -3,9 +3,9 @@
 import Foundation
 
 struct DailyData {
-    var food: [ConsumedFood]
+    var meals: [ConsumedMeal]
     
-    var calories: Int {
-        food.reduce(0) { $0 + $1.totalCalories }
+    var calories: Double {
+        meals.reduce(0) { $0 + $1.totalCalories }
     }
 }

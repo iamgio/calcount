@@ -1,8 +1,9 @@
 import SwiftUI
 
-struct FoodPreviewView: View {
-    
+struct AddMealView: View {
     private static let addOrSubtractAmount = 100
+    
+    @EnvironmentObject var modelData: ModelData
     
     var meal: Meal
     
@@ -47,7 +48,7 @@ struct FoodPreviewView: View {
             
             HStack {
                 Button {
-                    updateAmount(delta: -FoodPreviewView.addOrSubtractAmount)
+                    updateAmount(delta: -AddMealView.addOrSubtractAmount)
                 } label: {
                     Label("Subtract", systemImage: "minus.circle.fill")
                         .labelStyle(.iconOnly)
@@ -70,7 +71,7 @@ struct FoodPreviewView: View {
                     .frame(width: 16)
                 
                 Button {
-                    updateAmount(delta: FoodPreviewView.addOrSubtractAmount)
+                    updateAmount(delta: AddMealView.addOrSubtractAmount)
                 } label: {
                     Label("Add", systemImage: "plus.circle.fill")
                         .labelStyle(.iconOnly)
@@ -98,12 +99,11 @@ struct FoodPreviewView: View {
     }
 }
 
-struct FoodPreviewView_Previews: PreviewProvider {
+struct AddMealView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodPreviewView(meal: Meal(
-            id: 52982,
-            name: "Spaghetti alla Carbonara",
-            imageUrl: "https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg"
-        ))
+        let modelData = ModelData()
+        
+        AddMealView(meal: modelData.todaysData.meals.first!.meal)
+        .environmentObject(modelData)
     }
 }

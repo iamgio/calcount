@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct AddFoodView: View {
+struct SearchMealView: View {
     
     @State private var searchText = "";
     
@@ -14,10 +14,10 @@ struct AddFoodView: View {
                 }
             }
             .navigationDestination(for: Meal.self) { value in
-                FoodPreviewView(meal: value)
+                AddMealView(meal: value)
                     .navigationBarTitleDisplayMode(.inline)
             }
-            .navigationTitle("Add food")
+            .navigationTitle("Add meal")
         }
         .searchable(text: $searchText)
         .task { search() }
@@ -36,8 +36,8 @@ struct AddFoodView: View {
     }
 }
 
-struct AddFoodView_Previews: PreviewProvider {
+struct SearchMealView_Previews: PreviewProvider {
     static var previews: some View {
-        AddFoodView()
+        SearchMealView()
     }
 }

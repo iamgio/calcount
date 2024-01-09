@@ -8,7 +8,7 @@ struct HomeView: View {
     var body: some View {
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(.white)]
         
-        let todaysData = modelData.user.data.dailyData[0]! // TODO by date
+        let todaysData = modelData.todaysData
         
         return NavigationView {
             VStack() {

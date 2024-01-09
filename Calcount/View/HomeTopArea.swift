@@ -12,7 +12,7 @@ struct HomeTopArea: View {
         
         return VStack {
             HStack {
-                Text(String(todaysData.calories))
+                Text(String(Int(todaysData.calories)))
                     .font(.system(size: 40, weight: .bold))
                 
                 Text("/ " + String(caloriesGoal))
@@ -23,7 +23,7 @@ struct HomeTopArea: View {
             Text("kcal")
                 .padding(.bottom, 28)
             
-            if todaysData.calories >= caloriesGoal {
+            if Int(todaysData.calories) >= caloriesGoal {
                 Text("Congratulations!")
                     .foregroundStyle(.green)
                     .bold()
@@ -32,7 +32,7 @@ struct HomeTopArea: View {
             } else {
                 Text("Keep going!")
                     .bold()
-                Text(String(caloriesGoal - todaysData.calories) + " more calories to reach your goal")
+                Text(String(caloriesGoal - Int(todaysData.calories)) + " more calories to reach your goal")
                     .foregroundStyle(.secondary)
             }
             

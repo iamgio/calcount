@@ -4,7 +4,7 @@ import SwiftUI
 
 struct HomeBottomArea: View {
     
-    @State private var showingAddFood = false;
+    @State private var showingAddMeal = false;
     
     var todaysData: DailyData
     
@@ -15,8 +15,8 @@ struct HomeBottomArea: View {
             
             ScrollView(.horizontal) {
                 HStack(spacing: 16) {
-                    ForEach(todaysData.food, id: \.self) { food in
-                        ConsumedFoodBox(food: food)
+                    ForEach(todaysData.meals, id: \.self) { meal in
+                        ConsumedMealBox(meal: meal)
                     }
                 }
                 .padding()
@@ -24,21 +24,24 @@ struct HomeBottomArea: View {
             .padding(.bottom)
             
             Button {
-                showingAddFood = true
+                showingAddMeal = true
             } label: {
-                Label("Add food", systemImage: "plus")
+                Label("Add meal", systemImage: "plus")
                     .bold()
             }
             .buttonStyle(.borderedProminent)
         }
-        .sheet(isPresented: $showingAddFood) {
-            AddFoodView()
+        .sheet(isPresented: $showingAddMeal) {
+            SearchMealView()
         }
     }
 }
 
 struct HomeBottomArea_Previews: PreviewProvider {
     static var previews: some View {
-        HomeBottomArea(todaysData: ModelData().user.data.dailyData[0]!)
+        let modelData = ModelData()
+        
+        HomeBottomArea(todaysData: modelData.todaysData)
+            .environmentObject(modelData)
     }
 }
