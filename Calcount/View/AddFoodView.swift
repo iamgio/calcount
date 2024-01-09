@@ -15,6 +15,7 @@ struct AddFoodView: View {
             }
             .navigationDestination(for: Meal.self) { value in
                 FoodPreviewView(meal: value)
+                    .navigationBarTitleDisplayMode(.inline)
             }
             .navigationTitle("Add food")
         }
