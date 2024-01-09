@@ -18,6 +18,8 @@ struct HomeView: View {
                 
                 Spacer()
             }
+            /*
+             TODO toolbar + sheet makes the app crash
             .toolbar {
                 Button {
                     
@@ -26,6 +28,7 @@ struct HomeView: View {
                 }
                 .tint(.white)
             }
+            */
         }
     }
 }
