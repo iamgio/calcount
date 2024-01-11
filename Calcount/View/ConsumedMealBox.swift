@@ -29,7 +29,7 @@ struct ConsumedMealBox: View {
             }
             .foregroundStyle(.white)
             .padding()
-            .background(Color.blue.brightness(-0.2).opacity(0.3).background(.ultraThinMaterial))
+            .background(Color.blue.brightness(-0.3).opacity(0.3).background(.ultraThinMaterial))
             .clipShape(RoundedRectangle(cornerRadius: 16))
         }
         

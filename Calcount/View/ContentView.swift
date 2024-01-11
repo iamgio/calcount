@@ -9,8 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HomeView()
-            .environmentObject(ModelData())
+        TabView {
+            HomeView()
+                .environmentObject(ModelData())
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+            Text("History")
+                .tabItem {
+                    Label("History", systemImage: "calendar")
+                }
+            Text("Settings")
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
+                }
+        }.background(.thinMaterial)
     }
 }
 
