@@ -7,16 +7,16 @@ struct ConsumedMealBox: View {
     
     var body: some View {
         VStack {
-            RoundedRectangle(cornerRadius: 16) // Should be an image
-                .frame(height: 110)
+            MealImage(meal: meal.meal)
+                .frame(width: 130)
                 .padding(.bottom)
-                .foregroundStyle(.blue)
             
             Text(meal.meal.name)
                 .frame(width: 170)
                 .fixedSize(horizontal: true, vertical: false)
                 .font(.headline)
                 .multilineTextAlignment(.center)
+                .padding(.bottom, 4)
             
             HStack {
                 Text(String(Int(meal.amount)) + "g")
@@ -24,6 +24,7 @@ struct ConsumedMealBox: View {
                 
                 Text(String(Int(meal.totalCalories)) + "kcal")
             }
+            .font(.footnote)
         }
         .padding(24)
         .background(.blue.opacity(0.08))

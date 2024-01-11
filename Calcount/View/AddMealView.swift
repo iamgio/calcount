@@ -14,27 +14,17 @@ struct AddMealView: View {
     }
     
     private func updateAmount(delta: Int) {
-        amountText = String(max(0, amount + delta))
+        withAnimation {
+            amountText = String(max(0, amount + delta))
+        }
     }
     
     var body: some View {
         VStack(spacing: 8) {
-            AsyncImage(url: URL(string: meal.imageUrl)) { phase in
-                switch phase {
-                case .empty:
-                    ProgressView()
-                case .success(let image):
-                    image
-                        .resizable()
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
-                        .aspectRatio(contentMode: .fit)
-                        .shadow(color: .blue.opacity(0.08), radius: 12, y: 16)
-                default:
-                    EmptyView()
-                }
-            }
-            .frame(height: 150)
-            .padding(32)
+            MealImage(meal: meal)
+                .shadow(color: .blue.opacity(0.08), radius: 12, y: 16)
+                .frame(height: 150)
+                .padding(32)
             
             Text(meal.name)
                 .font(.title2)
@@ -86,6 +76,8 @@ struct AddMealView: View {
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .padding(.bottom)
+                .id(amountText)
+                .transition(.opacity)
             
             Button {
                 

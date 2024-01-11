@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F258FAC2B50690500F54DEC /* MealImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F258FAB2B50690500F54DEC /* MealImage.swift */; };
 		3F2C49AD2B1615960060C321 /* HomeTopArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C49AC2B1615960060C321 /* HomeTopArea.swift */; };
 		3F2C49AF2B16254E0060C321 /* HomeBottomArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C49AE2B16254E0060C321 /* HomeBottomArea.swift */; };
 		3F2C49B12B1626E90060C321 /* ConsumedMealBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C49B02B1626E90060C321 /* ConsumedMealBox.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F258FAB2B50690500F54DEC /* MealImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealImage.swift; sourceTree = "<group>"; };
 		3F2C49AC2B1615960060C321 /* HomeTopArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopArea.swift; sourceTree = "<group>"; };
 		3F2C49AE2B16254E0060C321 /* HomeBottomArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomArea.swift; sourceTree = "<group>"; };
 		3F2C49B02B1626E90060C321 /* ConsumedMealBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumedMealBox.swift; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F258FAA2B5068F600F54DEC /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3F258FAB2B50690500F54DEC /* MealImage.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		3F6F7D2C2B15362A00AC70F5 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 		3F6F7D462B15373600AC70F5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3F258FAA2B5068F600F54DEC /* Helper */,
 				3F6F7D3A2B15362A00AC70F5 /* ContentView.swift */,
 				3F7E1E4A2B49C85A008BAEC8 /* SearchMealView.swift */,
 				3F72D9332B4B71980028A835 /* AddMealView.swift */,
@@ -212,6 +223,7 @@
 				3F2C49B52B1627100060C321 /* ConsumedFood.swift in Sources */,
 				3F6F7D4B2B153EED00AC70F5 /* UserData.swift in Sources */,
 				3F2C49AD2B1615960060C321 /* HomeTopArea.swift in Sources */,
+				3F258FAC2B50690500F54DEC /* MealImage.swift in Sources */,
 				3F6F7D392B15362A00AC70F5 /* CalcountApp.swift in Sources */,
 				3F6F7D512B15433200AC70F5 /* ModelData.swift in Sources */,
 				3F72D9342B4B71980028A835 /* AddMealView.swift in Sources */,
