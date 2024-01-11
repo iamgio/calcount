@@ -6,29 +6,32 @@ struct ConsumedMealBox: View {
     var meal: ConsumedMeal
     
     var body: some View {
-        VStack {
+        ZStack(alignment: .bottom) {
             MealImage(meal: meal.meal)
-                .frame(width: 130)
-                .padding(.bottom)
+                .frame(height: 200)
             
-            Text(meal.meal.name)
-                .frame(width: 170)
-                .fixedSize(horizontal: true, vertical: false)
-                .font(.headline)
-                .multilineTextAlignment(.center)
-                .padding(.bottom, 4)
-            
-            HStack {
-                Text(String(Int(meal.amount)) + "g")
-                    .foregroundStyle(.secondary)
+            VStack {
+                Text(meal.meal.name)
+                    .frame(width: 170)
+                    .fixedSize(horizontal: true, vertical: false)
+                    .font(.headline)
+                    .multilineTextAlignment(.center)
+                    .padding(.bottom, 4)
+                    .lineLimit(2, reservesSpace: true)
                 
-                Text(String(Int(meal.totalCalories)) + "kcal")
+                HStack {
+                    Text(String(Int(meal.amount)) + "g")
+                        .foregroundStyle(.secondary)
+                    
+                    Text(String(Int(meal.totalCalories)) + "kcal")
+                }
+                .font(.footnote)
             }
-            .font(.footnote)
+            .foregroundStyle(.white)
+            .padding()
+            .background(Color.blue.brightness(-0.2).opacity(0.3).background(.ultraThinMaterial))
+            .clipShape(RoundedRectangle(cornerRadius: 16))
         }
-        .padding(24)
-        .background(.blue.opacity(0.08))
-        .clipShape(.rect(cornerRadius: 16))
         
         // TODO tap to show info
     }

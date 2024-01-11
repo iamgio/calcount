@@ -13,6 +13,14 @@ class ModelData: ObservableObject {
                 ),
                 amount: 150
             ),
+            ConsumedMeal(
+                meal: Meal(
+                    id: 52795,
+                    name: "Chicken Handi",
+                    imageUrl: "https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg"
+                ),
+                amount: 100
+            ),
         ]),
     ], caloriesGoal: 2000))
     
